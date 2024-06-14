@@ -29,12 +29,21 @@ if (process.env.ENVIRONMENT === 'PRODUCTION') envFilePath = '.env.production';
     ConfigModule.forRoot({ envFilePath }),
     PassportModule.register({ session: true }),
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: process.env.MYSQL_DB_HOST,
-      port: parseInt(process.env.MYSQL_DB_PORT),
-      username: process.env.MYSQL_DB_USERNAME,
-      password: process.env.MYSQL_DB_PASSWORD,
-      database: process.env.MYSQL_DB_NAME,
+      // type: 'mssql',
+      // host: process.env.MYSQL_DB_HOST,
+      // port: parseInt(process.env.MYSQL_DB_PORT),
+      // username: process.env.MYSQL_DB_USERNAME,
+      // password: process.env.MYSQL_DB_PASSWORD,
+      // database: process.env.MYSQL_DB_NAME,
+      // synchronize: true,
+      // entities,
+      // logging: false,
+      type: 'mssql',
+      host: 'localhost',
+      port: 1433,
+      username: 'sa',
+      password: '123456780',
+      database: 'master',
       synchronize: true,
       entities,
       logging: false,
@@ -62,4 +71,4 @@ if (process.env.ENVIRONMENT === 'PRODUCTION') envFilePath = '.env.production';
     },
   ],
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,10 +1,10 @@
 declare namespace NodeJS {
   export interface ProcessEnv {
-    MYSQL_DB_HOST?: string;
-    MYSQL_DB_NAME?: string;
-    MYSQL_DB_PORT?: string;
-    MYSQL_DB_PASSWORD?: string;
-    MYSQL_DB_USERNAME?: string;
+    MYSQL_DB_HOST?: 'localhost';
+    MYSQL_DB_NAME?: 'master';
+    MYSQL_DB_PORT?: '1433';
+    MYSQL_DB_PASSWORD?: '123456780';
+    MYSQL_DB_USERNAME?: 'sa';
     COOKIE_SECRET: string;
   }
 }

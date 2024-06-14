@@ -30,7 +30,7 @@ export class FriendRequestService implements IFriendRequestService {
     private readonly userService: IUserService,
     @Inject(Services.FRIENDS_SERVICE)
     private readonly friendsService: IFriendsService,
-  ) {}
+  ) { }
 
   getFriendRequests(id: number): Promise<FriendRequest[]> {
     const status = 'pending';
@@ -118,9 +118,9 @@ export class FriendRequestService implements IFriendRequestService {
     });
   }
 
-  findById(id: number): Promise<FriendRequest> {
-    return this.friendRequestRepository.findOne(id, {
-      relations: ['receiver', 'sender'],
-    });
-  }
+  // findById(id: number): Promise<FriendRequest> {
+  //   return this.friendRequestRepository.findOne(id, {
+  //     relations: ['receiver', 'sender'],
+  //   });
+  // }
 }
